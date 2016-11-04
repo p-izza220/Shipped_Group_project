@@ -1,3 +1,6 @@
+
+<% if current_user.user_type == "Shipping" %>
+
 <% content_for :title, "Boat - " + @boat.name %>
 <div class="row">
 	<div class="col-md-12">
@@ -7,11 +10,16 @@
 			Container Capacity: <%= @boat.container %><br/><br/>
 			<%=link_to 'Edit', edit_boat_path(params[:id]), :class=>"btn-success btn btn-github" %>
 			<%= link_to 'Delete',  { action: :destroy, id: @boat.id }, method: :delete, data: { confirm: 'Are you sure?' }, :class=>"btn-success btn btn-github" %>
-			<%= image_tag "http://maps.googleapis.com/maps/api/staticmap?center=#{@boat.latitude},#{@boat.longitude}&markers=#{@boat.latitude},#{@boat.longitude}&zoom=7&size=480x290&key=AIzaSyA4BHW3txEdqfxzdTlPwaHsYRSZbfeIcd8",
-		              class: 'img-fluid img-rounded', alt: "#{@boat.location} on the map", id:"map" %>
-
-
+			<%= image_tag "http://maps.googleapis.com/maps/api/staticmap?center=#{@boat.latitude},#{@boat.longitude}&markers=#{@boat.latitude},#{@boat.longitude}&zoom=7&size=500x242&key=AIzaSyA4BHW3txEdqfxzdTlPwaHsYRSZbfeIcd8",
+		              class: 'img-fluid img-rounded', alt: "#{@boat.location} on the map", id:"map" %><br><br>
 
 		</div>
 	</div>
 </div>
+
+<% else %>
+
+<h1>Error: You do not have access to view this page</h1>
+
+<% end %>
+
