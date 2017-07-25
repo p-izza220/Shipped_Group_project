@@ -1,7 +1,7 @@
 <p align="center">
     <img alt="Shipped Group Project" src="http://i.cubeupload.com/jBrrUt.png" width="568">
 </p>
----
+
 ## If you want to check it out
 - Open **terminal**
 - **cd** into the folder (**"cd Desktop"**, **"cd Shipped_Group_project"**)
